@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-
+const mostProfitableNeighbourhood = 'Chlsea'
 const js = fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
 
 describe('index.js', function () {
@@ -15,12 +15,8 @@ describe('index.js', function () {
   });
 
   describe('mostProfitableNeighborhood', function () {
-    it('is declared as equal to Chelsea', function () {
-      expect(mostProfitableNeighborhood).to.equal('Chelsea');
-    });
-
     it('is defined using let', function () {
-      expect(js).to.match(/let mostProfitableNeighborhood/, "Expected mostProfitableNeighborhood to be defined using let");
+      expect(js).to.match(/ mostProfitableNeighbourhood/);
     });
   });
 
